@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body class="text-center">
+<h2>Do It using Meteor.Js</h2>
+
+<!--Template markers which allocates the rendering place for the named templates-->
+
+{{> tasksdescription}}
+{{> todo}}
+<br>
+{{> action}}
+</body>
+
+ <!--Template definitions which are need to insert into app body at run time-->
+
+<template name="tasksdescription">
+    <h3>You have</h3>
+    <ul class="unstyled-list">
+
+        <!--Invokable template helpers defined under 'taskdescription' template-->
+
+        <li>Total tasks: {{totaltasks}}</li>
+        <li>Tasks done: {{tasksdone}}</li>
+        <li>Tasks remaining: {{remainingtasks}}</li>
+    </ul>
+</template>
+<template name="todo">
+    <div class="todoTemplate">
+        <div class="todoBordered">
+            <h3>Your Task List</h3>
+            <ul>
+                <!--Iterating (repeating) over an Array of list-->
+                {{#each tasks}}
+                    <li class="{{done}}">{{task}}<span class="txt-primary" id="donetask" title="Mark as done">&nbsp;&nbsp;&nbsp;<a href="#">(x)</a></span>
+                    </li>
+
+                <!--This block will be executed when the array is empty-->
+                {{else}}
+                    <h5>Currently you have no tasks</h5>
+
+                    <!--Representing the end of '#each' block-->
+                {{/each}}
+
+            </ul>
+        </div>
+    </div>
+</template>
+<template name="action">
+    <form class="form-horizontal">
+        <div class="text-center">
+            <input type="text" id="newtask" placeholder="Enter Task"/>
+            <button class="btn btn-sm btn-success" type="submit" id="addtask">Add Task</button>
+        </div>
+        <br/>
+        <div class="text-center">
+            <button class="btn btn-sm btn-default" id="clearselected">Clear Marked</button>
+        </div>
+        <br/>
+        <div class="text-center">
+            <button class="btn btn-sm btn-danger" id="clearall">Clear All</button>
+        </div>
+    </form>
+</template>

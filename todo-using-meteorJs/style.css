@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+.workdone {
+    color: lightgreen;
+    text-decoration: line-through;
+}
+.unstyled-list {
+    list-style: none
+}
+.todoTemplate {
+    padding-left:40%;
+    padding-right:40%;
+    width:20%
+}
+.todoBordered {
+    border:2px solid lightslategray;
+    border-radius: 5px
+}
