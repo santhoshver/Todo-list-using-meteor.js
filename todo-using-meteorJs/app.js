@@ -1,4 +1,4 @@
-/** Simple DoList App developed with Meteor.js v1.1.0.2
+/** Simple To Do List App, developed with Meteor.js v1.1.0.2
  *  Twitter Bootstrap v1.0.1 Used
  * */
 
@@ -10,14 +10,14 @@ if (Meteor.isClient) {
 
     /** helpers are behaviors like variables, Its returning some values in run time*/
     // Definition of helpers under 'taskdescription' template
-    Template.tasksdescription.helpers({
-        tasksdone: function () {
+    Template.tasksDescription.helpers({
+        tasksDone: function () {
             return Tasks.find({done: true}).fetch().length;
         },
-        totaltasks: function () {
+        totalTasks: function () {
             return Tasks.find().count();
         },
-        remainingtasks: function () {
+        remainingTasks: function () {
             return Tasks.find().count() - Tasks.find({done: true}).fetch().length
         }
     });

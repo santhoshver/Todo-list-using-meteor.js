@@ -7,23 +7,23 @@
 
 <!--Template markers which allocates the rendering place for the named templates-->
 
-{{> tasksdescription}}
+{{> tasksDescription}}
 {{> todo}}
-<br>
+<br/>
 {{> action}}
 </body>
 
- <!--Template definitions which are need to insert into app body at run time-->
+ <!--Template definitions which are automatically inserted into app body at run time-->
 
-<template name="tasksdescription">
+<template name="tasksDescription">
     <h3>You have</h3>
     <ul class="unstyled-list">
 
         <!--Invokable template helpers defined under 'taskdescription' template-->
 
-        <li>Total tasks: {{totaltasks}}</li>
-        <li>Tasks done: {{tasksdone}}</li>
-        <li>Tasks remaining: {{remainingtasks}}</li>
+        <li>Total tasks: {{totalTasks}}</li>
+        <li>Tasks done: {{tasksDone}}</li>
+        <li>Tasks remaining: {{remainingTasks}}</li>
     </ul>
 </template>
 <template name="todo">
