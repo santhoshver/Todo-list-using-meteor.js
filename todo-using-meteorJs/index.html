@@ -2,11 +2,9 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body class="text-center">
-<h2>Do It using Meteor.Js</h2>
+<body>
 
 <!--Template markers which allocates the rendering place for the named templates-->
-
 {{> tasksDescription}}
 {{> todo}}
 <br/>
@@ -14,39 +12,40 @@
 </body>
 
  <!--Template definitions which are automatically inserted into app body at run time-->
-
 <template name="tasksDescription">
-    <h3>You have</h3>
-    <ul class="unstyled-list">
+    <div class="center-block center-text">
+        <h2>Do It using Meteor.Js</h2>
+        <h3>You have</h3>
+        <ul class="unstyled-list center-text">
 
-        <!--Invokable template helpers defined under 'taskdescription' template-->
-
-        <li>Total tasks: {{totalTasks}}</li>
-        <li>Tasks done: {{tasksDone}}</li>
-        <li>Tasks remaining: {{remainingTasks}}</li>
-    </ul>
+            <!--Invokable template helpers defined under 'taskdescription' template-->
+            <li>Total tasks: {{totalTasks}}</li>
+            <li>Tasks done: {{tasksDone}}</li>
+            <li>Tasks remaining: {{remainingTasks}}</li>
+        </ul>
+    </div>
 </template>
+
 <template name="todo">
-    <div class="todoTemplate">
+    <div class="center-block">
         <div class="todoBordered">
-            <h3>Your Task List</h3>
-            <ul>
+            <h3 class="center-text">Your Task List</h3>
+            <ul class="unstyled-list">
                 <!--Iterating (repeating) over an Array of list-->
                 {{#each tasks}}
-                    <li class="{{done}}">{{task}}<span class="txt-primary" id="donetask" title="Mark as done">&nbsp;&nbsp;&nbsp;<a href="#">(x)</a></span>
-                    </li>
+                    <li><input title="Mark as done" checked="{{done}}" type="checkbox" id="donetask"/> <span class="{{done}}">{{task}}</span></li>
 
-                <!--This block will be executed when the array is empty-->
+                    <!--This block will be executed when the array is empty-->
                 {{else}}
                     <h5>Currently you have no tasks</h5>
 
                     <!--Representing the end of '#each' block-->
                 {{/each}}
-
             </ul>
         </div>
     </div>
 </template>
+
 <template name="action">
     <form class="form-horizontal">
         <div class="text-center">

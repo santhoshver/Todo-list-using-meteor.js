@@ -6,7 +6,7 @@
 .unstyled-list {
     list-style: none
 }
-.todoTemplate {
+.center-block {
     padding-left:40%;
     padding-right:40%;
     width:20%
@@ -14,4 +14,15 @@
 .todoBordered {
     border:2px solid lightslategray;
     border-radius: 5px
+}
+.center-text {
+    text-align: center;
+}
+
+/** To align checkboxes & radio buttons with label*/
+input[type=checkbox], input[type=radio]
+{
+    vertical-align: -2px;
+    margin: 0;
+    padding: 0;
 }
